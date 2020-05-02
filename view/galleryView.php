@@ -21,7 +21,7 @@ $css = "public/css/gallery.css";
     </div>
 </section>
 
-<section class="images-wrapper w-100 row-start nowrap">
+<div class="images-wrapper w-100 row-start nowrap">
 
     <?php if (count($images) > 0): ?>
 
@@ -47,7 +47,7 @@ $css = "public/css/gallery.css";
 
     <?php endif; ?>
 
-</section>
+</div>
 
 <?php require "footer.php" ?>
 
