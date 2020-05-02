@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^home$ index.php
+RewriteRule ^gallery$ index.php?action=gallery
+RewriteRule ^gallery/(.*)$ index.php?action=gallery&q=$1 [QSA]
+RewriteRule ^login$ index.php?action=login
+RewriteRule ^logout$ index.php?action=logout
+RewriteRule ^manage$ index.php?action=manage
