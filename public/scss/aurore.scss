@@ -1,0 +1,315 @@
+// A little css framework I built for the needs of this project :)
+@import "mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  &-start {
+    @extend .col;
+    justify-content: flex-start;
+
+    &-start {
+      @extend .col-start;
+      align-items: flex-start;
+    }
+
+    &-end {
+      @extend .col-start;
+      align-items: flex-end;
+    }
+
+    &-center {
+      @extend .col-start;
+      align-items: center;
+    }
+  }
+  &-end {
+    @extend .col;
+    justify-content: flex-end;
+
+    &-start {
+      @extend .col-end;
+      align-items: flex-start;
+    }
+
+    &-end {
+      @extend .col-end;
+      align-items: flex-end;
+    }
+
+    &-center {
+      @extend .col-end;
+      align-items: center;
+    }
+  }
+
+  &-center {
+    @extend .col;
+    justify-content: center;
+
+    &-start {
+      @extend .col-center;
+      align-items: flex-start;
+    }
+
+    &-end {
+      @extend .col-center;
+      align-items: flex-end;
+    }
+
+    &-center {
+      @extend .col-center;
+      align-items: center;
+    }
+  }
+
+  &-around {
+    @extend .col;
+    justify-content: space-around;
+
+    &-start {
+      @extend .col-around;
+      align-items: flex-start;
+    }
+
+    &-end {
+      @extend .col-around;
+      align-items: flex-end;
+    }
+
+    &-center {
+      @extend .col-around;
+      align-items: center;
+    }
+  }
+
+  &-between {
+    @extend .col;
+    justify-content: space-between;
+
+    &-start {
+      @extend .col-between;
+      align-items: flex-start;
+    }
+
+    &-end {
+      @extend .col-between;
+      align-items: flex-end;
+    }
+
+    &-center {
+      @extend .col-between;
+      align-items: center;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  &-start {
+    @extend .row;
+    justify-content: flex-start;
+    &-start {
+      @extend .row-start;
+      align-items: flex-start;
+    }
+    &-end {
+      @extend .row-start;
+      align-items: flex-end;
+    }
+    &-center {
+      @extend .row-start;
+      align-items: center;
+    }
+  }
+  &-end {
+    @extend .row;
+    justify-content: flex-end;
+    &-start {
+      @extend .row-end;
+      align-items: flex-start;
+    }
+    &-end {
+      @extend .row-end;
+      align-items: flex-end;
+    }
+    &-center {
+      @extend .row-end;
+      align-items: center;
+    }
+  }
+  &-center {
+    @extend .row;
+    justify-content: center;
+    &-start {
+      @extend .row-center;
+      align-items: flex-start;
+    }
+    &-end {
+      @extend .row-center;
+      align-items: flex-end;
+    }
+    &-center {
+      @extend .row-center;
+      align-items: center;
+    }
+  }
+  &-around {
+    @extend .row;
+    justify-content: space-around;
+    &-start {
+      @extend .row-around;
+      align-items: flex-start;
+    }
+    &-end {
+      @extend .row-around;
+      align-items: flex-end;
+    }
+    &-center {
+      @extend .row-around;
+      align-items: center;
+    }
+  }
+  &-between {
+    @extend .row;
+    justify-content: space-between;
+    &-start {
+      @extend .row-between;
+      align-items: flex-start;
+    }
+    &-end {
+      @extend .row-between;
+      align-items: flex-end;
+    }
+    &-center {
+      @extend .row-between;
+      align-items: center;
+    }
+  }
+}
+
+.m {
+  &l {
+    &-1 {
+      margin-left: 5px;
+    }
+  }
+  &r {
+    &-1 {
+      margin-right: 5px;
+    }
+    &-2 {
+      margin-right: 10px;
+    }
+    &-3 {
+      margin-right: 15px;
+    }
+    &-4 {
+      margin-right: 20px;
+    }
+  }
+  &-auto {
+    margin: auto;
+  }
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.w {
+  &-25 {
+    width: 25%;
+  }
+  &-50 {
+    width: 50%;
+  }
+  &-75 {
+    width: 75%;
+  }
+  &-100 {
+    width: 100%;
+  }
+}
+
+.h {
+  &-25 {
+    height: 25%;
+  }
+  &-50 {
+    height: 50%;
+  }
+  &-75 {
+    height: 75%;
+  }
+  &-100 {
+    height: 100%;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.rounded {
+  border-radius: 6px;
+}
+
+.shadow {
+  @include prefix(box-shadow, 0px 3px 6px 0px rgba(0,0,0,0.16), ('webkit','moz','o'));
+}
+
+.hli {
+  &-2-0 {
+    width: 50vw;
+  }
+
+  &-3 {
+    &-0 {
+      width: (100vw / 3);
+    }
+    &-1 {
+      width: (98vw / 3);
+      &:nth-child(3n+2) {
+        margin-left: 1vw;
+        margin-right: 1vw;
+      }
+    }
+  }
+  &-4 {
+    &-0 {
+      width: 25vw;
+    }
+    &-1 {
+      width: (97vw / 4);
+      &:not(:nth-child(4n+4)) {
+        margin-right: 1vw;
+      }
+      &:not(:last-child) {
+        margin-right: 1vw;
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@import "mixins";
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+.background {
+  z-index: 0;
+  top: 0;
+  left: 0;
+  background: black url("../images/gallery-background.jpg") center center no-repeat;
+  @include prefix(background-size, cover, ('webkit','moz','o'));
+  filter: brightness(70%);
+}
+
+.front {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 4vw 8vw;
+}
+
+.intro {
+  p {
+    color: white;
+    text-shadow: 0 0 20px black;
+    font-size: 2rem;
+  }
+  form {
+    margin-top: 20px;
+    input {
+      width: 400px;
+      font-size: 1rem;
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 20px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.images-wrapper {
+  background: #f1f1f1;
+  padding: 4vw 8vw;
+  .img-col {
+    img:not(:first-child) {
+      margin-top: 1vw;
+    }
+  }
+}
+
+img {
+  display: block;
+}
+
+.img-wrap {
+  background: white;
+  &:hover .img-info {
+    max-height: inherit;
+    padding: 1vw;
+  }
+  &:not(:first-child) {
+    margin-top: 1vw;
+  }
+  .img-info {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.8s;
+    -moz-transition: max-height 0.8s;
+    transition: max-height 0.8s;
+    padding: 0;
+  }
+}
+
+

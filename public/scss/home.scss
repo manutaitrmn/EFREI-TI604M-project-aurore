@@ -1,0 +1,41 @@
+@import "mixins";
+
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+.background {
+  z-index: 0;
+  top: 0;
+  left: 0;
+  background: black url("../images/home-background.jpg") center center no-repeat;
+  @include prefix(background-size, cover, ('webkit','moz','o'));
+  filter: brightness(30%);
+}
+
+.front {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 8vw;
+}
+
+.intro {
+  margin: auto;
+  color: white;
+  p {
+    text-shadow: 0 0 20px black;
+    font-size: 2rem;
+  }
+  a {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    border: 2px solid white;
+    padding: 6px 10px;
+    &:hover {
+      background: white;
+      color: #333439;
+    }
+  }
+}

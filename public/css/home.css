@@ -1,0 +1,44 @@
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+.background {
+  z-index: 0;
+  top: 0;
+  left: 0;
+  background: black url("../images/home-background.jpg") center center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  filter: brightness(30%);
+}
+
+.front {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 8vw;
+}
+
+.intro {
+  margin: auto;
+  color: white;
+}
+.intro p {
+  text-shadow: 0 0 20px black;
+  font-size: 2rem;
+}
+.intro a {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  border: 2px solid white;
+  padding: 6px 10px;
+}
+.intro a:hover {
+  background: white;
+  color: #333439;
+}
+
+/*# sourceMappingURL=home.css.map */

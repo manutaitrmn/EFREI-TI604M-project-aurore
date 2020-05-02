@@ -1,0 +1,75 @@
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+.background {
+  z-index: 0;
+  top: 0;
+  left: 0;
+  background: black url("../images/gallery-background.jpg") center center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  filter: brightness(70%);
+}
+
+.front {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 4vw 8vw;
+}
+
+.intro p {
+  color: white;
+  text-shadow: 0 0 20px black;
+  font-size: 2rem;
+}
+.intro form {
+  margin-top: 20px;
+}
+.intro form input {
+  width: 400px;
+  font-size: 1rem;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+}
+.intro form input:focus {
+  outline: none;
+}
+
+.images-wrapper {
+  background: #f1f1f1;
+  padding: 4vw 8vw;
+}
+.images-wrapper .img-col img:not(:first-child) {
+  margin-top: 1vw;
+}
+
+img {
+  display: block;
+}
+
+.img-wrap {
+  background: white;
+}
+.img-wrap:hover .img-info {
+  max-height: inherit;
+  padding: 1vw;
+}
+.img-wrap:not(:first-child) {
+  margin-top: 1vw;
+}
+.img-wrap .img-info {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.8s;
+  -moz-transition: max-height 0.8s;
+  transition: max-height 0.8s;
+  padding: 0;
+}
+
+/*# sourceMappingURL=gallery.css.map */

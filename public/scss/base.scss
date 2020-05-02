@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Circular Book";
+  src: url("../fonts/circular/lineto-circular-pro-book.ttf");
+}
+
+* {
+  font-family: "Circular Book";
+}
+
+header {
+  color: white;
+  text-shadow: 0 0 30px black;
+  h1 {
+    font-size: 2rem;
+  }
+  nav {
+    ul {
+      li {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+footer {
+  background: #dadef5;
+  color: #818394; //#333439
+  padding: 4vw 8vw;
+  font-size: 0.9em;
+}
