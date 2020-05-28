@@ -56,7 +56,7 @@ $css = "public/css/gallery.css";
      * @return {boolean}
      */
     function SubmitForm() {
-        const val = document.getElementById('search-bar').value;
+        const val = document.getElementById('search-bar').value.replace(/[^a-z0-']+/gi, '');
         window.location.href='/aurore/gallery/' + val;
         return false;
     }

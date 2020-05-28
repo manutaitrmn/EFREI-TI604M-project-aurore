@@ -54,10 +54,14 @@ function manage() {
 function addImage($url,$description) {
     if ($url != "" && $description != "") {
         $imageManager = new ImageManager();
-        if ($imageManager->add($url,$description,$_SESSION['user'])) {
-            $_SESSION['addresponse'] = "Image added.";
+        if (is_array(getimagesize($url))) {
+            if ($imageManager->add($url,$description,$_SESSION['user'])) {
+                $_SESSION['addresponse'] = "Image added.";
+            } else {
+                $_SESSION['addresponse'] = "Error adding image.";
+            }
         } else {
-            $_SESSION['addresponse'] = "Error adding image.";
+            $_SESSION['addresponse'] = "This is not an image !";
         }
     } else {
         $_SESSION['addresponse'] = "Please fill all inputs.";
@@ -88,8 +92,8 @@ function deleteImage($id) {
 
 function login() {
     if (!empty($_POST['username']) && !empty($_POST['password'])) {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+        $username = trim(htmlspecialchars($_POST['username']));
+        $password = trim(htmlspecialchars($_POST['password']));
         if ($username != "" && $password != "") {
             $userManager = new UserManager();
             $user = $userManager->connectUser($username, $password);
