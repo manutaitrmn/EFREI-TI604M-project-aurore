@@ -1,10 +1,7 @@
 <?php
 session_start();
 
-require "controller/UserController.php";
-require "controller/HomeController.php";
-require "controller/GalleryController.php";
-require "controller/ManageController.php";
+require "controller/Controller.php";
 
 try {
     if (isset($_GET['action'])) {
